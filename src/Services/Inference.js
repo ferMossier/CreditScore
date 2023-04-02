@@ -8,8 +8,8 @@ export const Inference = async (features) => {
     region: "sa-east-1",
   });
 
-  console.log("Access: ", process.env.ACCESS_KEY);
-  console.log("Sec: ", process.env.SECRET_KEY);
+  console.log("Access: ", process.env.REACT_APP_ACCESS_KEY);
+  console.log("Sec: ", process.env.REACT_APP_SECRET_KEY);
   const sagemaker = new SageMakerRuntime();
 
   const body = {
