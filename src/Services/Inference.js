@@ -3,8 +3,8 @@ import SageMakerRuntime from "aws-sdk/clients/sagemakerruntime";
 
 export const Inference = async (features) => {
   AWS.config.update({
-    accessKeyId: "AKIAZ2OXW5ABALSW7HIR",
-    secretAccessKey: "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",
+    accessKeyId: "AKIAZ2OXW5ABGXMXZBH4",
+    secretAccessKey: "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",
     region: "sa-east-1",
   });
 
@@ -21,7 +21,7 @@ export const Inference = async (features) => {
   try {
     const respuesta = await sagemaker
       .invokeEndpoint({
-        EndpointName: "linear-learner-2023-03-25-19-51-44-328",
+        EndpointName: "linear-learner-2023-04-02-17-31-51-186",
         ContentType: "application/json",
         Body: JSON.stringify(body),
       })

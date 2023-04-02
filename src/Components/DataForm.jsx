@@ -4,24 +4,26 @@ import { Inference } from "../Services/Inference";
 
 const DataForm = () => {
   const [values, setValues] = useState({
-    value0: "",
-    value1: "",
-    value2: "",
-    value3: "",
-    value4: "",
-    value5: "",
-    value6: "",
-    value7: "",
-    value8: "",
-    value9: "",
-    value10: "",
-    value11: "",
-    value12: "",
-    value13: "",
-    value14: "",
-    value15: "",
-    value16: "",
+    Edad: "",
+    ocupacion: "",
+    ingresosAnuales: "",
+    salarioNetoMensual: "",
+    cantidadCuentasBancarias: "",
+    cantidadTarjetasCredito: "",
+    tasaInteres: "",
+    cantidadPrestamos: "",
+    cantidadRetrasosDias: "",
+    cantidadPagosRetrasados: "",
+    consultasCredito: "",
+    deudaPendiente: "",
+    ratioUtilizacionCredito: "",
+    pagoMinimo: "",
+    cuotaMensualEquivalente: "",
+    inversionMensual: "",
+    balanceMensual: "",
   });
+  const [predictedResult, setPredictedResult] = useState();
+  const [scoreResult, setScoreResult] = useState([]);
 
   function handleChange(event) {
     const name = event.target.name;
@@ -38,7 +40,9 @@ const DataForm = () => {
     const arr = Object.values(values).map((value) => parseFloat(value));
     try {
       const result = await Inference(arr);
-      console.log("AC", result);
+      setPredictedResult(JSON.parse(result).predictions[0].predicted_label);
+      setScoreResult(JSON.parse(result).predictions[0].score);
+      console.log("AC", JSON.parse(result));
     } catch (error) {
       console.log("ACAA", error);
     }
@@ -49,193 +53,201 @@ const DataForm = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label>
-            Value 0:
+            Edad:
             <input
               type="text"
-              value={values.value0}
-              name="value0"
+              value={values.Edad}
+              name="Edad"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 1:
+            Ocupación:
             <input
               type="text"
-              value={values.value1}
-              name="value1"
+              value={values.ocupacion}
+              name="ocupacion"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 2:
+            Ingresos Anuales:
             <input
               type="text"
-              value={values.value2}
-              name="value2"
+              value={values.ingresosAnuales}
+              name="ingresosAnuales"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 3:
+            Salario Neto Mensual:
             <input
               type="text"
-              value={values.value3}
-              name="value3"
+              value={values.salarioNetoMensual}
+              name="salarioNetoMensual"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 4:
+            Cantidad de Cuentas Bancarias:
             <input
               type="text"
-              value={values.value4}
-              name="value4"
+              value={values.cantidadCuentasBancarias}
+              name="cantidadCuentasBancarias"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 5:
+            Total de tarjetas de Crédito:
             <input
               type="text"
-              value={values.value5}
-              name="value5"
+              value={values.cantidadTarjetasCredito}
+              name="cantidadTarjetasCredito"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 6:
+            Tasa de Interés:
             <input
               type="text"
-              value={values.value6}
-              name="value6"
+              value={values.tasaInteres}
+              name="tasaInteres"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 7:
+            Total de Préstamos:
             <input
               type="text"
-              value={values.value7}
-              name="value7"
+              value={values.cantidadPrestamos}
+              name="cantidadPrestamos"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 8:
+            Dias de Retrasos de Pagos :
             <input
               type="text"
-              value={values.value8}
-              name="value8"
+              value={values.cantidadRetrasosDias}
+              name="cantidadRetrasosDias"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 9:
+            Total de Pagos Retrasados:
             <input
               type="text"
-              value={values.value9}
-              name="value9"
+              value={values.cantidadPagosRetrasados}
+              name="cantidadPagosRetrasados"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 10:
+            Total de Consultas de Crédito:
             <input
               type="text"
-              value={values.value10}
-              name="value10"
+              value={values.consultasCredito}
+              name="consultasCredito"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 11:
+            Monto de Deuda Pendiente:
             <input
               type="text"
-              value={values.value11}
-              name="value11"
+              value={values.deudaPendiente}
+              name="deudaPendiente"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 12:
+            Ratio de Utilización de Crédito:
             <input
               type="text"
-              value={values.value12}
-              name="value12"
+              value={values.ratioUtilizacionCredito}
+              name="ratioUtilizacionCredito"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 13:
+            Pago Mínimo:
             <input
               type="text"
-              value={values.value13}
-              name="value13"
+              value={values.pagoMinimo}
+              name="pagoMinimo"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 14:
+            Cuota Mensual Equivalente (EMI):
             <input
               type="text"
-              value={values.value14}
-              name="value14"
+              value={values.cuotaMensualEquivalente}
+              name="cuotaMensualEquivalente"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 15:
+            Monto de Inversión Mensual:
             <input
               type="text"
-              value={values.value15}
-              name="value15"
+              value={values.inversionMensual}
+              name="inversionMensual"
               onChange={handleChange}
             />
           </label>
         </div>
         <div>
           <label>
-            Value 16:
+            Balance Mensual:
             <input
               type="text"
-              value={values.value16}
-              name="value16"
+              value={values.balanceMensual}
+              name="balanceMensual"
               onChange={handleChange}
             />
           </label>
         </div>
         <input type="submit" value="Submit" />
       </form>
+      <div>RESULTADO: {predictedResult}</div>
+      <div>
+        {scoreResult.map((score, index) => (
+          <div key={index}>
+            Valor {index}: {score}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
