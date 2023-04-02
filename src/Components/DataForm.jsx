@@ -55,32 +55,51 @@ const DataForm = () => {
           <label>
             Edad:
             <input
-              type="text"
+              type="number"
               value={values.Edad}
               name="Edad"
               onChange={handleChange}
+              required
             />
           </label>
         </div>
         <div>
           <label>
             Ocupación:
-            <input
-              type="text"
+            <select
+              type="number"
               value={values.ocupacion}
               name="ocupacion"
               onChange={handleChange}
-            />
+              required
+            >
+              <option value="1">Científico</option>
+              <option value="2">Profesor</option>
+              <option value="3">Ingeniero</option>
+              <option value="4">Emprendedor</option>
+              <option value="5">Desarrollador</option>
+              <option value="6">Abogado</option>
+              <option value="7">Media Manager</option>
+              <option value="8">Médico</option>
+              <option value="9">Periodista</option>
+              <option value="10">Manager</option>
+              <option value="11">Contador</option>
+              <option value="12">Musico</option>
+              <option value="13">Mecánico</option>
+              <option value="14">Escritor</option>
+              <option value="15">Arquitecto</option>
+            </select>
           </label>
         </div>
         <div>
           <label>
             Ingresos Anuales:
             <input
-              type="text"
+              type="number"
               value={values.ingresosAnuales}
               name="ingresosAnuales"
               onChange={handleChange}
+              required
             />
           </label>
         </div>
@@ -88,10 +107,11 @@ const DataForm = () => {
           <label>
             Salario Neto Mensual:
             <input
-              type="text"
+              type="number"
               value={values.salarioNetoMensual}
               name="salarioNetoMensual"
               onChange={handleChange}
+              required
             />
           </label>
         </div>
@@ -99,7 +119,7 @@ const DataForm = () => {
           <label>
             Cantidad de Cuentas Bancarias:
             <input
-              type="text"
+              type="number"
               value={values.cantidadCuentasBancarias}
               name="cantidadCuentasBancarias"
               onChange={handleChange}
@@ -110,10 +130,11 @@ const DataForm = () => {
           <label>
             Total de tarjetas de Crédito:
             <input
-              type="text"
+              type="number"
               value={values.cantidadTarjetasCredito}
               name="cantidadTarjetasCredito"
               onChange={handleChange}
+              required
             />
           </label>
         </div>
@@ -121,10 +142,11 @@ const DataForm = () => {
           <label>
             Tasa de Interés:
             <input
-              type="text"
+              type="number"
               value={values.tasaInteres}
               name="tasaInteres"
               onChange={handleChange}
+              required
             />
           </label>
         </div>
@@ -132,10 +154,11 @@ const DataForm = () => {
           <label>
             Total de Préstamos:
             <input
-              type="text"
+              type="number"
               value={values.cantidadPrestamos}
               name="cantidadPrestamos"
               onChange={handleChange}
+              required
             />
           </label>
         </div>
@@ -143,10 +166,11 @@ const DataForm = () => {
           <label>
             Dias de Retrasos de Pagos :
             <input
-              type="text"
+              type="number"
               value={values.cantidadRetrasosDias}
               name="cantidadRetrasosDias"
               onChange={handleChange}
+              required
             />
           </label>
         </div>
@@ -154,10 +178,11 @@ const DataForm = () => {
           <label>
             Total de Pagos Retrasados:
             <input
-              type="text"
+              type="number"
               value={values.cantidadPagosRetrasados}
               name="cantidadPagosRetrasados"
               onChange={handleChange}
+              required
             />
           </label>
         </div>
@@ -165,10 +190,11 @@ const DataForm = () => {
           <label>
             Total de Consultas de Crédito:
             <input
-              type="text"
+              type="number"
               value={values.consultasCredito}
               name="consultasCredito"
               onChange={handleChange}
+              required
             />
           </label>
         </div>
@@ -176,10 +202,11 @@ const DataForm = () => {
           <label>
             Monto de Deuda Pendiente:
             <input
-              type="text"
+              type="number"
               value={values.deudaPendiente}
               name="deudaPendiente"
               onChange={handleChange}
+              required
             />
           </label>
         </div>
@@ -187,32 +214,38 @@ const DataForm = () => {
           <label>
             Ratio de Utilización de Crédito:
             <input
-              type="text"
+              type="number"
               value={values.ratioUtilizacionCredito}
               name="ratioUtilizacionCredito"
               onChange={handleChange}
+              required
             />
           </label>
         </div>
         <div>
           <label>
             Pago Mínimo:
-            <input
-              type="text"
+            <select
+              type="number"
               value={values.pagoMinimo}
               name="pagoMinimo"
               onChange={handleChange}
-            />
+              required
+            >
+              <option value="1">Si</option>
+              <option value="0">No</option>
+            </select>
           </label>
         </div>
         <div>
           <label>
             Cuota Mensual Equivalente (EMI):
             <input
-              type="text"
+              type="number"
               value={values.cuotaMensualEquivalente}
               name="cuotaMensualEquivalente"
               onChange={handleChange}
+              required
             />
           </label>
         </div>
@@ -220,10 +253,11 @@ const DataForm = () => {
           <label>
             Monto de Inversión Mensual:
             <input
-              type="text"
+              type="number"
               value={values.inversionMensual}
               name="inversionMensual"
               onChange={handleChange}
+              required
             />
           </label>
         </div>
@@ -231,10 +265,11 @@ const DataForm = () => {
           <label>
             Balance Mensual:
             <input
-              type="text"
+              type="number"
               value={values.balanceMensual}
               name="balanceMensual"
               onChange={handleChange}
+              required
             />
           </label>
         </div>
