@@ -3,11 +3,13 @@ import SageMakerRuntime from "aws-sdk/clients/sagemakerruntime";
 
 export const Inference = async (features) => {
   AWS.config.update({
-    accessKeyId: "AKIAZ2OXW5ABGXMXZBH4",
-    secretAccessKey: "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",
+    accessKeyId: process.env.REACT_APP_ACCESS_KEY,
+    secretAccessKey: process.env.REACT_APP_SECRET_KEY,
     region: "sa-east-1",
   });
 
+  console.log("Access: ", process.env.ACCESS_KEY);
+  console.log("Sec: ", process.env.SECRET_KEY);
   const sagemaker = new SageMakerRuntime();
 
   const body = {
