@@ -32,11 +32,16 @@ const DataForm = () => {
     });
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
+    event.preventDefault();
     console.log("Form submitted: ", values);
     const arr = Object.values(values).map((value) => parseFloat(value));
-    Inference(arr);
-    event.preventDefault();
+    try {
+      const result = await Inference(arr);
+      console.log("AC", result);
+    } catch (error) {
+      console.log("ACAA", error);
+    }
   }
 
   return (
