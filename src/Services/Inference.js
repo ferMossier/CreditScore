@@ -26,6 +26,7 @@ export const Inference = async (features) => {
         Body: JSON.stringify(body),
       })
       .promise();
+    console.log(features);
     return respuesta.Body.toString("utf-8");
   } catch (error) {
     console.log(error);
