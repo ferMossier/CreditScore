@@ -1,6 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { Inference } from "../Services/Inference";
+import {
+  MDBInput,
+  MDBCol,
+  MDBRow,
+  MDBCheckbox,
+  MDBBtn
+} from 'mdb-react-ui-kit';
 
 const DataForm = () => {
   const [values, setValues] = useState({
@@ -50,19 +57,20 @@ const DataForm = () => {
 
   return (
     <div>
+
+      <br/>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Edad:
-            <input
-              type="number"
-              value={values.Edad}
-              name="Edad"
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
+      
+        <MDBInput 
+            className="mb-4" 
+            type="number"
+            value={values.Edad} 
+            name="Edad"
+            label="Edad"
+            onChange={handleChange}
+            required
+        />
+
         <div>
           <label>
             Ocupación:
@@ -90,138 +98,118 @@ const DataForm = () => {
               <option value="15">Arquitecto</option>
             </select>
           </label>
-        </div>
-        <div>
-          <label>
-            Ingresos Anuales:
-            <input
-              type="number"
-              value={values.ingresosAnuales}
-              name="ingresosAnuales"
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Salario Neto Mensual:
-            <input
-              type="number"
-              value={values.salarioNetoMensual}
-              name="salarioNetoMensual"
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Cantidad de Cuentas Bancarias:
-            <input
-              type="number"
-              value={values.cantidadCuentasBancarias}
-              name="cantidadCuentasBancarias"
-              onChange={handleChange}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Total de tarjetas de Crédito:
-            <input
-              type="number"
-              value={values.cantidadTarjetasCredito}
-              name="cantidadTarjetasCredito"
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Tasa de Interés:
-            <input
-              type="number"
-              value={values.tasaInteres}
-              name="tasaInteres"
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Total de Préstamos:
-            <input
-              type="number"
-              value={values.cantidadPrestamos}
-              name="cantidadPrestamos"
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Dias de Retrasos de Pagos :
-            <input
-              type="number"
-              value={values.cantidadRetrasosDias}
-              name="cantidadRetrasosDias"
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Total de Pagos Retrasados:
-            <input
-              type="number"
-              value={values.cantidadPagosRetrasados}
-              name="cantidadPagosRetrasados"
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Total de Consultas de Crédito:
-            <input
-              type="number"
-              value={values.consultasCredito}
-              name="consultasCredito"
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Monto de Deuda Pendiente:
-            <input
-              type="number"
-              value={values.deudaPendiente}
-              name="deudaPendiente"
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Ratio de Utilización de Crédito:
-            <input
-              type="number"
-              value={values.ratioUtilizacionCredito}
-              name="ratioUtilizacionCredito"
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
+        </div><br/>
+
+        <MDBInput 
+          className="mb-4" 
+          type="number"
+          value={values.ingresosAnuales} 
+          name="ingresosAnuales"
+          label="Ingresos Anuales"
+          onChange={handleChange}
+          required
+        />
+
+        <MDBInput 
+          className="mb-4" 
+          type="number"
+          value={values.salarioNetoMensual} 
+          name="salarioNetoMensual"
+          label="Salario Neto Mensual"
+          onChange={handleChange}
+          required
+        />
+
+        <MDBInput 
+          className="mb-4" 
+          type="number"
+          value={values.cantidadCuentasBancarias} 
+          name="cantidadCuentasBancarias"
+          label="Cantidad de Cuentas Bancarias"
+          onChange={handleChange}
+          required
+        />
+
+        <MDBInput 
+          className="mb-4" 
+          type="number"
+          value={values.cantidadTarjetasCredito} 
+          name="cantidadTarjetasCredito"
+          label="Total de tarjetas de Crédito"
+          onChange={handleChange}
+          required
+        />
+
+        <MDBInput 
+          className="mb-4" 
+          type="number"
+          value={values.tasaInteres} 
+          name="tasaInteres"
+          label="Tasa de Interés"
+          onChange={handleChange}
+          required
+        />
+
+        <MDBInput 
+          className="mb-4" 
+          type="number"
+          value={values.cantidadPrestamos} 
+          name="cantidadPrestamos"
+          label="Total de Préstamos"
+          onChange={handleChange}
+          required
+        />
+
+        <MDBInput 
+          className="mb-4" 
+          type="number"
+          value={values.cantidadRetrasosDias} 
+          name="cantidadRetrasosDias"
+          label="Dias de Retrasos de Pagos"
+          onChange={handleChange}
+          required
+        />
+
+        <MDBInput 
+          className="mb-4" 
+          type="number"
+          value={values.cantidadPagosRetrasados} 
+          name="cantidadPagosRetrasados"
+          label="Total de Pagos Retrasados"
+          onChange={handleChange}
+          required
+        />
+    
+        <MDBInput 
+          className="mb-4" 
+          type="number"
+          value={values.consultasCredito} 
+          name="consultasCredito"
+          label="Total de Consultas de Crédito"
+          onChange={handleChange}
+          required
+        />
+      
+        <MDBInput 
+          className="mb-4" 
+          type="number"
+          value={values.deudaPendiente} 
+          name="deudaPendiente"
+          label="Monto de Deuda Pendiente"
+          onChange={handleChange}
+          required
+        />
+
+        <MDBInput 
+          className="mb-4" 
+          type="number"
+          value={values.ratioUtilizacionCredito} 
+          name="ratioUtilizacionCredito"
+          label="Ratio de Utilización de Crédito"
+          onChange={handleChange}
+          required
+        />
+        
         <div>
           <label>
             Pago Mínimo:
@@ -237,43 +225,41 @@ const DataForm = () => {
             </select>
           </label>
         </div>
-        <div>
-          <label>
-            Cuota Mensual Equivalente (EMI):
-            <input
-              type="number"
-              value={values.cuotaMensualEquivalente}
-              name="cuotaMensualEquivalente"
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Monto de Inversión Mensual:
-            <input
-              type="number"
-              value={values.inversionMensual}
-              name="inversionMensual"
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Balance Mensual:
-            <input
-              type="number"
-              value={values.balanceMensual}
-              name="balanceMensual"
-              onChange={handleChange}
-              required
-            />
-          </label>
-        </div>
-        <input type="submit" value="Submit" />
+
+        <MDBInput 
+          className="mb-4" 
+          type="number"
+          value={values.cuotaMensualEquivalente} 
+          name="cuotaMensualEquivalente"
+          label="Cuota Mensual Equivalente (EMI)"
+          onChange={handleChange}
+          required
+        />
+
+        <MDBInput 
+          className="mb-4" 
+          type="number"
+          value={values.inversionMensual} 
+          name="inversionMensual"
+          label="Monto de Inversión Mensual"
+          onChange={handleChange}
+          required
+        />
+
+        <MDBInput 
+          className="mb-4" 
+          type="number"
+          value={values.balanceMensual} 
+          name="balanceMensual"
+          label="Balance Mensual"
+          onChange={handleChange}
+          required
+        />
+
+        <MDBBtn type='submit' block>
+          Submit
+        </MDBBtn>
+
       </form>
       <div>RESULTADO: {predictedResult}</div>
       <div>
