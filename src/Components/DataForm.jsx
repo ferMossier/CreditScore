@@ -55,6 +55,10 @@ const DataForm = () => {
     }
   }
 
+  function showResults(){
+    return predictedResult == undefined?"notShowResults":"showResults"
+  }
+
   async function handleSubmit(event) {
     event.preventDefault();
     console.log("Form submitted: ", values);
@@ -276,7 +280,7 @@ const DataForm = () => {
               type="number"
               value={values.cuotaMensualEquivalente} 
               name="cuotaMensualEquivalente"
-              label="Cuota Mensual Equivalente (EMI)"
+              label="Cuota Mensual Equivalente"
               onChange={handleChange}
               required
             />
@@ -315,12 +319,10 @@ const DataForm = () => {
 
       </form>
 
-      <div>
-          {scoreResult.map((score, index) => (
-            <div class="alert alert-primary" role="alert">
-              Su Scoring Crediticio es: {translateResult(predictedResult)}
-            </div>
-          ))}
+      <div className={showResults(predictedResult)}>
+        <div className="alert alert-primary" role="alert">
+          Su Scoring Crediticio es: {translateResult(predictedResult)}
+        </div>
       </div>
 
     </div>
