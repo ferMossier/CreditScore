@@ -58,207 +58,232 @@ const DataForm = () => {
   return (
     <div>
 
-      <br/>
-      <form onSubmit={handleSubmit}>
-      
-        <MDBInput 
-            className="mb-4" 
-            type="number"
-            value={values.Edad} 
-            name="Edad"
-            label="Edad"
-            onChange={handleChange}
-            required
-        />
-
-        <div>
-          <label>
-            Ocupación:
-            <select
-              type="number"
-              value={values.ocupacion}
-              name="ocupacion"
-              onChange={handleChange}
-              required
-            >
-              <option value="1">Científico</option>
-              <option value="2">Profesor</option>
-              <option value="3">Ingeniero</option>
-              <option value="4">Emprendedor</option>
-              <option value="5">Desarrollador</option>
-              <option value="6">Abogado</option>
-              <option value="7">Media Manager</option>
-              <option value="8">Médico</option>
-              <option value="9">Periodista</option>
-              <option value="10">Manager</option>
-              <option value="11">Contador</option>
-              <option value="12">Musico</option>
-              <option value="13">Mecánico</option>
-              <option value="14">Escritor</option>
-              <option value="15">Arquitecto</option>
-            </select>
-          </label>
-        </div><br/>
-
-        <MDBInput 
-          className="mb-4" 
-          type="number"
-          value={values.ingresosAnuales} 
-          name="ingresosAnuales"
-          label="Ingresos Anuales"
-          onChange={handleChange}
-          required
-        />
-
-        <MDBInput 
-          className="mb-4" 
-          type="number"
-          value={values.salarioNetoMensual} 
-          name="salarioNetoMensual"
-          label="Salario Neto Mensual"
-          onChange={handleChange}
-          required
-        />
-
-        <MDBInput 
-          className="mb-4" 
-          type="number"
-          value={values.cantidadCuentasBancarias} 
-          name="cantidadCuentasBancarias"
-          label="Cantidad de Cuentas Bancarias"
-          onChange={handleChange}
-          required
-        />
-
-        <MDBInput 
-          className="mb-4" 
-          type="number"
-          value={values.cantidadTarjetasCredito} 
-          name="cantidadTarjetasCredito"
-          label="Total de tarjetas de Crédito"
-          onChange={handleChange}
-          required
-        />
-
-        <MDBInput 
-          className="mb-4" 
-          type="number"
-          value={values.tasaInteres} 
-          name="tasaInteres"
-          label="Tasa de Interés"
-          onChange={handleChange}
-          required
-        />
-
-        <MDBInput 
-          className="mb-4" 
-          type="number"
-          value={values.cantidadPrestamos} 
-          name="cantidadPrestamos"
-          label="Total de Préstamos"
-          onChange={handleChange}
-          required
-        />
-
-        <MDBInput 
-          className="mb-4" 
-          type="number"
-          value={values.cantidadRetrasosDias} 
-          name="cantidadRetrasosDias"
-          label="Dias de Retrasos de Pagos"
-          onChange={handleChange}
-          required
-        />
-
-        <MDBInput 
-          className="mb-4" 
-          type="number"
-          value={values.cantidadPagosRetrasados} 
-          name="cantidadPagosRetrasados"
-          label="Total de Pagos Retrasados"
-          onChange={handleChange}
-          required
-        />
-    
-        <MDBInput 
-          className="mb-4" 
-          type="number"
-          value={values.consultasCredito} 
-          name="consultasCredito"
-          label="Total de Consultas de Crédito"
-          onChange={handleChange}
-          required
-        />
-      
-        <MDBInput 
-          className="mb-4" 
-          type="number"
-          value={values.deudaPendiente} 
-          name="deudaPendiente"
-          label="Monto de Deuda Pendiente"
-          onChange={handleChange}
-          required
-        />
-
-        <MDBInput 
-          className="mb-4" 
-          type="number"
-          value={values.ratioUtilizacionCredito} 
-          name="ratioUtilizacionCredito"
-          label="Ratio de Utilización de Crédito"
-          onChange={handleChange}
-          required
-        />
-        
-        <div>
-          <label>
-            Pago Mínimo:
-            <select
-              type="number"
-              value={values.pagoMinimo}
-              name="pagoMinimo"
-              onChange={handleChange}
-              required
-            >
-              <option value="1">Si</option>
-              <option value="0">No</option>
-            </select>
-          </label>
+      <header>
+        <div className='p-5 text-center bg-light'>
+          <h1 className='mb-3'>Scoring Bancario</h1>
+          <h4 className='mb-3'>Consulte aquí</h4>
         </div>
+      </header>
 
-        <MDBInput 
-          className="mb-4" 
-          type="number"
-          value={values.cuotaMensualEquivalente} 
-          name="cuotaMensualEquivalente"
-          label="Cuota Mensual Equivalente (EMI)"
-          onChange={handleChange}
-          required
-        />
+      <form onSubmit={handleSubmit}>
+        <MDBRow>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.Edad} 
+              name="Edad"
+              label="Edad"
+              onChange={handleChange}
+              required
+            />
+          </MDBCol>
+          <MDBCol>
+            <select class="form-select" aria-label="Default select example" type="number" value={values.ocupacion} onChange={handleChange} name="ocupacion" required>
+                <option value="">Seleccione una ocupación</option>
+                <option value="1">Científico</option>
+                <option value="2">Profesor</option>
+                <option value="3">Ingeniero</option>
+                <option value="4">Emprendedor</option>
+                <option value="5">Desarrollador</option>
+                <option value="6">Abogado</option>
+                <option value="7">Media Manager</option>
+                <option value="8">Médico</option>
+                <option value="9">Periodista</option>
+                <option value="10">Manager</option>
+                <option value="11">Contador</option>
+                <option value="12">Musico</option>
+                <option value="13">Mecánico</option>
+                <option value="14">Escritor</option>
+                <option value="15">Arquitecto</option>
+            </select>
+          </MDBCol>
+        </MDBRow>
 
-        <MDBInput 
-          className="mb-4" 
-          type="number"
-          value={values.inversionMensual} 
-          name="inversionMensual"
-          label="Monto de Inversión Mensual"
-          onChange={handleChange}
-          required
-        />
+        <MDBRow>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.ingresosAnuales} 
+              name="ingresosAnuales"
+              label="Ingresos Anuales"
+              onChange={handleChange}
+              required
+            />
+          </MDBCol>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.salarioNetoMensual} 
+              name="salarioNetoMensual"
+              label="Salario Neto Mensual"
+              onChange={handleChange}
+              required
+            />
+          </MDBCol>
+        </MDBRow>
 
-        <MDBInput 
-          className="mb-4" 
-          type="number"
-          value={values.balanceMensual} 
-          name="balanceMensual"
-          label="Balance Mensual"
-          onChange={handleChange}
-          required
-        />
+        <MDBRow>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.cantidadCuentasBancarias} 
+              name="cantidadCuentasBancarias"
+              label="Cantidad de Cuentas Bancarias"
+              onChange={handleChange}
+              required
+            />
+          </MDBCol>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.cantidadTarjetasCredito} 
+              name="cantidadTarjetasCredito"
+              label="Total de tarjetas de Crédito"
+              onChange={handleChange}
+              required
+            />
+          </MDBCol>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.tasaInteres} 
+              name="tasaInteres"
+              label="Tasa de Interés"
+              onChange={handleChange}
+              required
+            />
+          </MDBCol>
+        </MDBRow>
 
-        <MDBBtn type='submit' block>
-          Submit
-        </MDBBtn>
+        
+        <MDBRow>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.cantidadPrestamos} 
+              name="cantidadPrestamos"
+              label="Total de Préstamos"
+              onChange={handleChange}
+              required
+            />
+          </MDBCol>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.cantidadRetrasosDias} 
+              name="cantidadRetrasosDias"
+              label="Dias de Retrasos de Pagos"
+              onChange={handleChange}
+              required
+            />
+          </MDBCol>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.cantidadPagosRetrasados} 
+              name="cantidadPagosRetrasados"
+              label="Total de Pagos Retrasados"
+              onChange={handleChange}
+              required
+            />
+          </MDBCol>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.consultasCredito} 
+              name="consultasCredito"
+              label="Total de Consultas de Crédito"
+              onChange={handleChange}
+              required
+            />
+          </MDBCol>
+        </MDBRow>
+        
+        <MDBRow>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.deudaPendiente} 
+              name="deudaPendiente"
+              label="Monto de Deuda Pendiente"
+              onChange={handleChange}
+              required
+            />
+          </MDBCol>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.ratioUtilizacionCredito} 
+              name="ratioUtilizacionCredito"
+              label="Ratio de Utilización de Crédito"
+              onChange={handleChange}
+              required
+            />
+          </MDBCol>
+          <MDBCol>
+            <select class="form-select" aria-label="Default select example" type="number" value={values.pagoMinimo} onChange={handleChange} name="pagoMinimo" required>
+                <option value="">Pago mínimo</option>
+                <option value="1">Si</option>
+                <option value="0">No</option>
+            </select>
+          </MDBCol>
+        </MDBRow>
+
+        <MDBRow>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.cuotaMensualEquivalente} 
+              name="cuotaMensualEquivalente"
+              label="Cuota Mensual Equivalente (EMI)"
+              onChange={handleChange}
+              required
+            />
+          </MDBCol>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.inversionMensual} 
+              name="inversionMensual"
+              label="Monto de Inversión Mensual"
+              onChange={handleChange}
+              required
+          />
+          </MDBCol>
+          <MDBCol>
+            <MDBInput 
+              className="mb-4" 
+              type="number"
+              value={values.balanceMensual} 
+              name="balanceMensual"
+              label="Balance Mensual"
+              onChange={handleChange}
+              required
+            />
+          </MDBCol>
+        </MDBRow>
+
+        <MDBRow>
+          <MDBCol>
+            <MDBBtn type='submit' block color="success">
+              Consultar Scori<select class="form-select" aria-label="Default select example" type="number" value={values.ocupacion} onChange={handleChange} name="pagoMinimo" required></select>ng
+            </MDBBtn>
+          </MDBCol>
+        </MDBRow>
 
       </form>
       <div>RESULTADO: {predictedResult}</div>
