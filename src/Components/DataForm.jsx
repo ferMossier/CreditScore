@@ -80,7 +80,14 @@ const DataForm = () => {
             />
           </MDBCol>
           <MDBCol>
-            <select className="form-select" aria-label="Default select example" type="number" value={values.ocupacion} onChange={handleChange} name="ocupacion" required>
+            <select
+              className="form-select"
+              type="number"
+              value={values.ocupacion}
+              name="ocupacion"
+              onChange={handleChange}
+              required
+            >
                 <option value="">Seleccione una ocupación</option>
                 <option value="1">Científico</option>
                 <option value="2">Profesor</option>
@@ -233,7 +240,14 @@ const DataForm = () => {
             />
           </MDBCol>
           <MDBCol>
-            <select className="form-select" aria-label="Default select example" type="number" value={values.pagoMinimo} onChange={handleChange} name="pagoMinimo" required>
+            <select
+              className="form-select"
+              type="number"
+              value={values.pagoMinimo}
+              name="pagoMinimo"
+              onChange={handleChange}
+              required
+            >
                 <option value="">Pago mínimo</option>
                 <option value="1">Si</option>
                 <option value="0">No</option>
