@@ -28,6 +28,10 @@ header{
   margin-bottom: 2%;
 }
 
+.alert{
+  margin-top: 2%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

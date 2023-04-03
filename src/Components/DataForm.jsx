@@ -50,6 +50,7 @@ const DataForm = () => {
       setPredictedResult(JSON.parse(result).predictions[0].predicted_label);
       setScoreResult(JSON.parse(result).predictions[0].score);
       console.log("AC", JSON.parse(result));
+
     } catch (error) {
       console.log("ACAA", error);
     }
@@ -60,7 +61,7 @@ const DataForm = () => {
 
       <header>
         <div className='p-5 text-center bg-light'>
-          <h1 className='mb-3'>Scoring Bancario</h1>
+          <h1 className='mb-3'>Scoring Crediticio</h1>
           <h4 className='mb-3'>Consulte aquí</h4>
         </div>
       </header>
@@ -79,7 +80,7 @@ const DataForm = () => {
             />
           </MDBCol>
           <MDBCol>
-            <select class="form-select" aria-label="Default select example" type="number" value={values.ocupacion} onChange={handleChange} name="ocupacion" required>
+            <select className="form-select" aria-label="Default select example" type="number" value={values.ocupacion} onChange={handleChange} name="ocupacion" required>
                 <option value="">Seleccione una ocupación</option>
                 <option value="1">Científico</option>
                 <option value="2">Profesor</option>
@@ -161,7 +162,6 @@ const DataForm = () => {
           </MDBCol>
         </MDBRow>
 
-        
         <MDBRow>
           <MDBCol>
             <MDBInput 
@@ -233,7 +233,7 @@ const DataForm = () => {
             />
           </MDBCol>
           <MDBCol>
-            <select class="form-select" aria-label="Default select example" type="number" value={values.pagoMinimo} onChange={handleChange} name="pagoMinimo" required>
+            <select className="form-select" aria-label="Default select example" type="number" value={values.pagoMinimo} onChange={handleChange} name="pagoMinimo" required>
                 <option value="">Pago mínimo</option>
                 <option value="1">Si</option>
                 <option value="0">No</option>
@@ -280,20 +280,24 @@ const DataForm = () => {
         <MDBRow>
           <MDBCol>
             <MDBBtn type='submit' block color="success">
-              Consultar Scori<select class="form-select" aria-label="Default select example" type="number" value={values.ocupacion} onChange={handleChange} name="pagoMinimo" required></select>ng
+              Consultar Scoring
             </MDBBtn>
           </MDBCol>
         </MDBRow>
 
       </form>
-      <div>RESULTADO: {predictedResult}</div>
+
       <div>
-        {scoreResult.map((score, index) => (
-          <div key={index}>
-            Valor {index}: {score}
-          </div>
-        ))}
+          {scoreResult.map((score, index) => (
+            <div key={index}>
+              <div class="alert alert-primary" role="alert">
+                <div>RESULTADO: {predictedResult}</div>
+                Valor {index}: {score}
+              </div>
+            </div>
+          ))}
       </div>
+
     </div>
   );
 };
