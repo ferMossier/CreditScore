@@ -41,6 +41,20 @@ const DataForm = () => {
     });
   }
 
+  function translateResult(result){
+    if(result==0){
+      return "POBRE";
+    }
+
+    if(result==1){
+      return "ESTANDAR";
+    }
+
+    if(result==2){
+      return "BUENO";
+    }
+  }
+
   async function handleSubmit(event) {
     event.preventDefault();
     console.log("Form submitted: ", values);
@@ -303,11 +317,8 @@ const DataForm = () => {
 
       <div>
           {scoreResult.map((score, index) => (
-            <div key={index}>
-              <div class="alert alert-primary" role="alert">
-                <div>RESULTADO: {predictedResult}</div>
-                Valor {index}: {score}
-              </div>
+            <div class="alert alert-primary" role="alert">
+              Su Scoring Crediticio es: {translateResult(predictedResult)}
             </div>
           ))}
       </div>
