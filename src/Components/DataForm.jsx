@@ -1,13 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Inference } from "../Services/Inference";
-import {
-  MDBInput,
-  MDBCol,
-  MDBRow,
-  MDBCheckbox,
-  MDBBtn
-} from 'mdb-react-ui-kit';
+import { MDBInput, MDBCol, MDBRow, MDBBtn } from "mdb-react-ui-kit";
 
 const DataForm = () => {
   const [values, setValues] = useState({
@@ -41,22 +35,22 @@ const DataForm = () => {
     });
   }
 
-  function translateResult(result){
-    if(result==0){
+  function translateResult(result) {
+    if (result === 0) {
       return "POBRE";
     }
 
-    if(result==1){
+    if (result === 1) {
       return "ESTANDAR";
     }
 
-    if(result==2){
+    if (result === 2) {
       return "BUENO";
     }
   }
 
-  function showResults(){
-    return predictedResult == undefined?"notShowResults":"showResults"
+  function showResults() {
+    return predictedResult === undefined ? "notShowResults" : "showResults";
   }
 
   async function handleSubmit(event) {
@@ -67,30 +61,28 @@ const DataForm = () => {
       const result = await Inference(arr);
       setPredictedResult(JSON.parse(result).predictions[0].predicted_label);
       setScoreResult(JSON.parse(result).predictions[0].score);
-      console.log("AC", JSON.parse(result));
-
+      console.log("Result: ", JSON.parse(result));
     } catch (error) {
-      console.log("ACAA", error);
+      console.log("Error: ", error);
     }
   }
 
   return (
     <div>
-
       <header>
-        <div className='p-5 text-center bg-light'>
-          <h1 className='mb-3'>Scoring Crediticio</h1>
-          <h4 className='mb-3'>Consulte aquí</h4>
+        <div className="p-5 text-center bg-light">
+          <h1 className="mb-3">Scoring Crediticio</h1>
+          <h4 className="mb-3">Consulte aquí</h4>
         </div>
       </header>
 
       <form onSubmit={handleSubmit}>
         <MDBRow>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.Edad} 
+              value={values.Edad}
               name="Edad"
               label="Edad"
               onChange={handleChange}
@@ -106,32 +98,32 @@ const DataForm = () => {
               onChange={handleChange}
               required
             >
-                <option value="">Seleccione una ocupación</option>
-                <option value="1">Científico</option>
-                <option value="2">Profesor</option>
-                <option value="3">Ingeniero</option>
-                <option value="4">Emprendedor</option>
-                <option value="5">Desarrollador</option>
-                <option value="6">Abogado</option>
-                <option value="7">Media Manager</option>
-                <option value="8">Médico</option>
-                <option value="9">Periodista</option>
-                <option value="10">Manager</option>
-                <option value="11">Contador</option>
-                <option value="12">Musico</option>
-                <option value="13">Mecánico</option>
-                <option value="14">Escritor</option>
-                <option value="15">Arquitecto</option>
+              <option value="">Seleccione una ocupación</option>
+              <option value="1">Científico</option>
+              <option value="2">Profesor</option>
+              <option value="3">Ingeniero</option>
+              <option value="4">Emprendedor</option>
+              <option value="5">Desarrollador</option>
+              <option value="6">Abogado</option>
+              <option value="7">Media Manager</option>
+              <option value="8">Médico</option>
+              <option value="9">Periodista</option>
+              <option value="10">Manager</option>
+              <option value="11">Contador</option>
+              <option value="12">Musico</option>
+              <option value="13">Mecánico</option>
+              <option value="14">Escritor</option>
+              <option value="15">Arquitecto</option>
             </select>
           </MDBCol>
         </MDBRow>
 
         <MDBRow>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.ingresosAnuales} 
+              value={values.ingresosAnuales}
               name="ingresosAnuales"
               label="Ingresos Anuales"
               onChange={handleChange}
@@ -139,10 +131,10 @@ const DataForm = () => {
             />
           </MDBCol>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.salarioNetoMensual} 
+              value={values.salarioNetoMensual}
               name="salarioNetoMensual"
               label="Salario Neto Mensual"
               onChange={handleChange}
@@ -153,10 +145,10 @@ const DataForm = () => {
 
         <MDBRow>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.cantidadCuentasBancarias} 
+              value={values.cantidadCuentasBancarias}
               name="cantidadCuentasBancarias"
               label="Cantidad de Cuentas Bancarias"
               onChange={handleChange}
@@ -164,10 +156,10 @@ const DataForm = () => {
             />
           </MDBCol>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.cantidadTarjetasCredito} 
+              value={values.cantidadTarjetasCredito}
               name="cantidadTarjetasCredito"
               label="Total de tarjetas de Crédito"
               onChange={handleChange}
@@ -175,10 +167,10 @@ const DataForm = () => {
             />
           </MDBCol>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.tasaInteres} 
+              value={values.tasaInteres}
               name="tasaInteres"
               label="Tasa de Interés"
               onChange={handleChange}
@@ -189,10 +181,10 @@ const DataForm = () => {
 
         <MDBRow>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.cantidadPrestamos} 
+              value={values.cantidadPrestamos}
               name="cantidadPrestamos"
               label="Total de Préstamos"
               onChange={handleChange}
@@ -200,10 +192,10 @@ const DataForm = () => {
             />
           </MDBCol>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.cantidadRetrasosDias} 
+              value={values.cantidadRetrasosDias}
               name="cantidadRetrasosDias"
               label="Dias de Retrasos de Pagos"
               onChange={handleChange}
@@ -211,10 +203,10 @@ const DataForm = () => {
             />
           </MDBCol>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.cantidadPagosRetrasados} 
+              value={values.cantidadPagosRetrasados}
               name="cantidadPagosRetrasados"
               label="Total de Pagos Retrasados"
               onChange={handleChange}
@@ -222,10 +214,10 @@ const DataForm = () => {
             />
           </MDBCol>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.consultasCredito} 
+              value={values.consultasCredito}
               name="consultasCredito"
               label="Total de Consultas de Crédito"
               onChange={handleChange}
@@ -233,13 +225,13 @@ const DataForm = () => {
             />
           </MDBCol>
         </MDBRow>
-        
+
         <MDBRow>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.deudaPendiente} 
+              value={values.deudaPendiente}
               name="deudaPendiente"
               label="Monto de Deuda Pendiente"
               onChange={handleChange}
@@ -247,10 +239,10 @@ const DataForm = () => {
             />
           </MDBCol>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.ratioUtilizacionCredito} 
+              value={values.ratioUtilizacionCredito}
               name="ratioUtilizacionCredito"
               label="Ratio de Utilización de Crédito"
               onChange={handleChange}
@@ -266,19 +258,19 @@ const DataForm = () => {
               onChange={handleChange}
               required
             >
-                <option value="">Pago mínimo</option>
-                <option value="1">Si</option>
-                <option value="0">No</option>
+              <option value="">Pago mínimo</option>
+              <option value="1">Si</option>
+              <option value="0">No</option>
             </select>
           </MDBCol>
         </MDBRow>
 
         <MDBRow>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.cuotaMensualEquivalente} 
+              value={values.cuotaMensualEquivalente}
               name="cuotaMensualEquivalente"
               label="Cuota Mensual Equivalente"
               onChange={handleChange}
@@ -286,21 +278,21 @@ const DataForm = () => {
             />
           </MDBCol>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.inversionMensual} 
+              value={values.inversionMensual}
               name="inversionMensual"
               label="Monto de Inversión Mensual"
               onChange={handleChange}
               required
-          />
+            />
           </MDBCol>
           <MDBCol>
-            <MDBInput 
-              className="mb-4" 
+            <MDBInput
+              className="mb-4"
               type="number"
-              value={values.balanceMensual} 
+              value={values.balanceMensual}
               name="balanceMensual"
               label="Balance Mensual"
               onChange={handleChange}
@@ -311,12 +303,11 @@ const DataForm = () => {
 
         <MDBRow>
           <MDBCol>
-            <MDBBtn type='submit' block color="success">
+            <MDBBtn type="submit" block color="success">
               Consultar Scoring
             </MDBBtn>
           </MDBCol>
         </MDBRow>
-
       </form>
 
       <div className={showResults(predictedResult)}>
@@ -324,7 +315,6 @@ const DataForm = () => {
           Su Scoring Crediticio es: {translateResult(predictedResult)}
         </div>
       </div>
-
     </div>
   );
 };
