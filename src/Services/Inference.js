@@ -21,7 +21,7 @@ export const Inference = async (features) => {
   try {
     const respuesta = await sagemaker
       .invokeEndpoint({
-        EndpointName: "linear-learner-2023-04-02-17-31-51-186",
+        EndpointName: "linear-learner-2023-04-05-16-29-32-764",
         ContentType: "application/json",
         Body: JSON.stringify(body),
       })
